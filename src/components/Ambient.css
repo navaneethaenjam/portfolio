@@ -1,0 +1,38 @@
+﻿.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Keep look unchanged — no orbs/grid/noise */
+.ambient__orb,
+.ambient__grid,
+.ambient__noise {
+  display: none;
+}
+
+.ambient__spot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 380px;
+  height: 380px;
+  margin: -190px 0 0 -190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(52, 152, 219, 0.1), transparent 68%);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient__spot {
+    display: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .ambient__spot {
+    display: none;
+  }
+}

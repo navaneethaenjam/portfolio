@@ -1,0 +1,43 @@
+.hero {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-height) + var(--space-7)) 0 var(--space-8);
+}
+
+.hero__inner {
+  max-width: 48rem;
+}
+
+.hero__name {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5.5vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.hero__tagline {
+  margin: 0 0 var(--space-6);
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--nav-height) + var(--space-6));
+  }
+}

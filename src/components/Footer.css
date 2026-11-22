@@ -1,0 +1,19 @@
+.footer {
+  border-top: none;
+  padding-block: var(--space-5);
+  background: var(--btn-dark);
+  color: #ffffff;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.875rem;
+  text-align: center;
+}

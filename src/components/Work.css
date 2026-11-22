@@ -1,0 +1,236 @@
+﻿.work__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
+  perspective: 1200px;
+}
+
+.work-card {
+  --rx: 0deg;
+  --ry: 0deg;
+  --px: 50%;
+  --py: 50%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: var(--space-5);
+  border-radius: var(--radius);
+  border: 1px solid var(--line-strong);
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateY(0);
+  transform-style: preserve-3d;
+  transition:
+    transform 160ms ease-out,
+    box-shadow var(--duration) var(--ease),
+    border-color var(--duration) var(--ease);
+  will-change: transform;
+}
+
+.work-card:hover,
+.work-card:focus-visible {
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateY(-3px);
+  border-color: color-mix(in srgb, var(--card-accent) 40%, var(--line-strong));
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.work-card > *:not(.work-card__sheen) {
+  position: relative;
+  z-index: 1;
+}
+
+.theme-teal {
+  --card-accent: var(--teal);
+}
+
+.theme-steel {
+  --card-accent: var(--steel);
+}
+
+.theme-amber {
+  --card-accent: var(--amber);
+}
+
+.work-card__sheen {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    380px circle at var(--px) var(--py),
+    color-mix(in srgb, var(--card-accent) 16%, transparent),
+    transparent 48%
+  );
+  opacity: 0;
+  transition: opacity var(--duration) var(--ease);
+  pointer-events: none;
+}
+
+.work-card:hover .work-card__sheen,
+.work-card:focus-visible .work-card__sheen {
+  opacity: 1;
+}
+
+.work-card h3 {
+  margin: 0 0 var(--space-3);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.work-card__stack,
+.work-modal__stack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: flex-start;
+  gap: 0.35rem;
+}
+
+.work-card__stack {
+  margin-bottom: var(--space-4);
+}
+
+.work-card__stack span,
+.work-modal__stack span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 0.7rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--muted);
+  background: #f8f9fa;
+}
+
+.work-card__actions,
+.work-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.work-card__actions {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--line);
+}
+
+.work-card__actions a,
+.work-modal__actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.1rem;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: color-mix(in srgb, var(--card-accent) 12%, transparent);
+  color: var(--card-accent);
+}
+
+.work-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgba(44, 62, 80, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.work-modal__panel {
+  position: relative;
+  width: min(100%, 520px);
+  max-height: min(85vh, 640px);
+  overflow: auto;
+  padding: 1.75rem 1.5rem 1.5rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(44, 62, 80, 0.2);
+}
+
+.work-modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: #fff;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.work-modal__close:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.work-modal__panel h3 {
+  margin: 0 2.2rem 0.85rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.work-modal__stack {
+  margin-bottom: 1rem;
+}
+
+.work-modal__blurb {
+  margin: 0 0 0.85rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.work-modal__panel ul {
+  margin: 0 0 1.1rem;
+  padding-left: 1.15rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.work-modal__panel li + li {
+  margin-top: 0.45rem;
+}
+
+.work-modal__actions {
+  padding-top: 0.25rem;
+}
+
+@media (max-width: 900px) {
+  .work__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-card,
+  .work-card:hover,
+  .work-card:focus-visible {
+    transform: none;
+  }
+
+  .work-card__sheen {
+    display: none;
+  }
+}

@@ -1,0 +1,42 @@
+:root {
+  /* Palette inspired by asritha2001.github.io */
+  --bg: #f8f9fa;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --text: #2c3e50;
+  --muted: #666666;
+  --faint: #8896a6;
+  --accent: #3498db;
+  --accent-2: #2980b9;
+  --accent-dim: rgba(52, 152, 219, 0.12);
+  --accent-glow: rgba(52, 152, 219, 0.22);
+  --teal: #3498db;
+  --steel: #2c3e50;
+  --amber: #2980b9;
+  --line: rgba(44, 62, 80, 0.08);
+  --line-strong: rgba(44, 62, 80, 0.14);
+  --btn-dark: #2c3e50;
+  --btn-dark-hover: #34495e;
+
+  --font-display: "Outfit", "Segoe UI", sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+
+  --max-width: 1100px;
+  --nav-height: 4.25rem;
+  --radius: 8px;
+  --radius-lg: 10px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 300ms;
+}
