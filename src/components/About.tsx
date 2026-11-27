@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { about, quickInfo, site } from "../content"
 import { useReveal } from "../hooks/useReveal"
+import profileImage from "../assets/profile.jpeg"
 import "./About.css"
 
 export function About() {
@@ -14,7 +15,7 @@ export function About() {
           <div className="about__frame">
             {imgOk ? (
               <img
-                src={site.profileImage}
+                src={profileImage}
                 alt={site.name}
                 onError={() => setImgOk(false)}
               />
