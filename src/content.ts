@@ -11,8 +11,8 @@ export const site = {
   email: "navaneethaenjam0@gmail.com",
   linkedin: "https://www.linkedin.com/in/navaneetha-enjam",
   github: "https://github.com/navaneethaenjam",
-  resumePath: "/resume.pdf",
-  profileImage: "/profile.jpeg",
+  resumePath: `${import.meta.env.BASE_URL}resume.pdf`,
+  profileImage: `${import.meta.env.BASE_URL}profile.jpeg`,
 }
 
 export const quickInfo = [
